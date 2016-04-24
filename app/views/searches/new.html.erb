@@ -1,0 +1,23 @@
+Welcome. The form below will take an app's ID for Apple Store (an integer) or for Google Play (eg: com.company.appname) and the following information about the app:<br>
+
+<ul>
+	<li>ID</li>
+  <li>Name</li>
+  <li>Publisher</li>
+  <li>Current version</li>
+  <li>Current version's release notes</li>
+  <li>When the current version was released</li>
+</ul>
+
+<br><br>
+<% if @error %>
+	<%= "You searched for #{@appID}. #{@error}" %>
+<% end %>
+
+<div class='form'>
+	<%= form_for(@search) do |f| %>
+		<%= f.label :app_id, 'App ID: ' %>
+		<%= f.text_field :appID %>
+		<%= f.submit 'Search!' %>
+	<% end %>
+</div>

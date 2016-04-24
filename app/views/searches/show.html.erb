@@ -1,0 +1,10 @@
+You searched the <%= @store %> for the app with ID <%= @appID %>.<br>
+The JSON Response details are below.<br><br>
+
+<span class='bold'>The JSON Response:</span><br>
+<%= @wanted_attributes %><br><br>
+
+<span class='bold'>The JSON Response (more readable)</span><br>
+<% @wanted_attributes.each do |attribute| %>
+	<span class='bold'><%= attribute.first %>:</span> <%= attribute.last %><br>
+<% end %>
